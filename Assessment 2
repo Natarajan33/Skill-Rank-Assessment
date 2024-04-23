@@ -1,0 +1,15 @@
+Here's my Task...
+To Store example 5 in a file ex5.json and add the given data and update the ex5.json file using Python program,
+I have done this in Colab.
+
+Code : 
+
+import json
+with open('/content/Ex-5.json', 'r') as file:
+    ex5 = json.load(file)
+for donut in ex5:
+    if donut['name'] == 'Old Fashioned':
+        donut['batters']['batter'].append({'id': '1004', 'type': 'Tea'})
+with open('ex5.json', 'w') as file:
+    json.dump(ex5, file, indent=4)
+print("Updated ex5.json file with a new batter for Old Fashioned donut.")
